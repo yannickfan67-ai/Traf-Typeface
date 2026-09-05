@@ -6,26 +6,6 @@
 	<string>_notdef.glif</string>
 	<key>.null</key>
 	<string>_null.glif</string>
-	<key>0</key>
-	<string>0.glif</string>
-	<key>1</key>
-	<string>1.glif</string>
-	<key>2</key>
-	<string>2.glif</string>
-	<key>3</key>
-	<string>3.glif</string>
-	<key>4</key>
-	<string>4.glif</string>
-	<key>5</key>
-	<string>5.glif</string>
-	<key>6</key>
-	<string>6.glif</string>
-	<key>7</key>
-	<string>7.glif</string>
-	<key>8</key>
-	<string>8.glif</string>
-	<key>9</key>
-	<string>9.glif</string>
 	<key>A</key>
 	<string>A_.glif</string>
 	<key>B</key>
@@ -956,5 +936,15 @@
 	<string>nine_tnum.glif</string>
 	<key>uni25CC</key>
 	<string>uni25CC.glif</string>
+	<key>uni0191</key>
+	<string>uni0191.glif</string>
+	<key>uni039C</key>
+	<string>uni039C.glif</string>
+	<key>uni03B4</key>
+	<string>uni03B4.glif</string>
+	<key>uni03C9</key>
+	<string>uni03C9.glif</string>
+	<key>uni03C6</key>
+	<string>uni03C6.glif</string>
 </dict>
 </plist>
