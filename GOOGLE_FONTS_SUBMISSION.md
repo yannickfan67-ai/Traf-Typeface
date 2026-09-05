@@ -21,7 +21,7 @@ By opening this issue, I confirm the project meets the following requirements wh
 - [x] The name of the font family expected to appear on app menus is **Traf Typeface** and is definitive. It does not include the copyright holder's full name or acronym.
 - [x] The font supports at least the Google Fonts 'Latin Core' glyphset.
 - [x] The repo has the Google Fonts preferred upstream repo structure.
-- [ ] I have read, agree with, and comply with, the full Google Fonts contributing requirements — technical requirements are addressed; Google CLA has not yet been signed.
+- [x] I have read, agree with, and comply with, the full Google Fonts contributing requirements. The Google Individual Contributor License Agreement has been submitted for Yannick T Harrington-Fan using yannickfan67@gmail.com and GitHub username yannickfan67-ai.
 - [x] I will maintain the repository and participate in the onboarding process.
 
 **AI-assisted development disclosure:**
