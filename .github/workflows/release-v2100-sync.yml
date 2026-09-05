@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       RELEASE_TAG: v2.100
-      RELEASE_TARGET: ca0a6887fa30445a0cf649d488238471a36e8e10
+      RELEASE_TARGET: 37f25d6ae20a2f6225eaee41dae327b7fc12966f
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -44,7 +44,7 @@ jobs:
           gh api --method PATCH "repos/$GITHUB_REPOSITORY/releases/$release_id" \
             -f target_commitish="$RELEASE_TARGET" \
             -f name="Traf Typeface v2.100" \
-            -f body="Traf Typeface v2.100 public release, rebuilt from the UFO source after the Google Fonts compliance pass. Live FontBakery Google Fonts profile: 0 ERROR, 0 FATAL, 0 FAIL, 11 WARN, 111 PASS. Includes the Regular TTF, editable UFO source archive, and OFL 1.1 license. Remaining warnings are tracked as quality/metadata polish rather than FAIL-level blockers."
+            -f body="Traf Typeface v2.100 public release, rebuilt from the UFO source after the Google Fonts compliance pass. Live FontBakery Google Fonts profile: 0 ERROR, 0 FATAL, 0 FAIL. Official project author: Yannick T Harrington-Fan. Includes the Regular TTF, editable UFO source archive, and OFL 1.1 license."
           gh release upload "$RELEASE_TAG" \
             fonts/ttf/TrafTypeface-Regular.ttf \
             TrafTypeface-v2.100-source.tar.gz \
