@@ -17,7 +17,7 @@ By opening this issue, I confirm the project meets the following requirements wh
 - [x] The source files are available in the repo.
 - [x] I am the sole copyright author of the entire project, or all other copyright authors have licensed their work to me under the OFL, and I commit to clearly disclosing if AI tools were used in the creation of this project.
 - [x] There are no "Reserved Font Names" in the OFL license information, or in the project documentation of any known upstream projects.
-- [ ] The family name is unique according to namecheck.fontdata.com — no duplicate Google Fonts issue or obvious public-web collision was found, but the dedicated namecheck confirmation is left for final maintainer/reviewer confirmation.
+- [x] The family name is unique according to namecheck.fontdata.com — the submitted Traf Typeface entry is now indexed by namecheck; it is currently marked “yet unverified”, and the exact-name search shows this single family entry.
 - [x] The name of the font family expected to appear on app menus is **Traf Typeface** and is definitive. It does not include the copyright holder's full name or acronym.
 - [x] The font supports at least the Google Fonts 'Latin Core' glyphset.
 - [x] The repo has the Google Fonts preferred upstream repo structure.
