@@ -1,3 +1,2 @@
 # Official copyright authors for the Traf Typeface project.
-# Before Google Fonts submission, replace the line below with the legal copyright holder(s) and contact email(s).
-Traf Project Authors <CONTACT_EMAIL_TODO>
+Yannick T Harrington-Fan <yannickfan67@gmail.com>
