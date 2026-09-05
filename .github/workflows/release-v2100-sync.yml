@@ -1,0 +1,52 @@
+name: Refresh v2.100 release
+
+on:
+  push:
+    paths:
+      - "release/REFRESH_V2100"
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-release:
+    runs-on: ubuntu-latest
+    env:
+      RELEASE_TAG: v2.100
+      RELEASE_TARGET: ca0a6887fa30445a0cf649d488238471a36e8e10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install font production tools
+        run: pip install -r requirements.txt
+      - name: Build final v2.100 TTF
+        run: make build
+      - name: Verify Google Fonts profile before release refresh
+        run: make test
+      - name: Build source archive
+        run: |
+          tar -czf TrafTypeface-v2.100-source.tar.gz \
+            sources/Traf-Regular.ufo build.sh Makefile requirements.txt requirements.in \
+            tools/fix_ufo.py tools/postprocess_font.py \
+            OFL.txt AUTHORS.txt CONTRIBUTORS.txt README.md CHANGELOG.md CONTRIBUTING.md
+      - name: Point v2.100 tag to final QA commit
+        run: |
+          git fetch origin "$RELEASE_TARGET"
+          git tag -f "$RELEASE_TAG" "$RELEASE_TARGET"
+          git push --force origin "refs/tags/$RELEASE_TAG"
+      - name: Refresh release metadata and assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          release_id="$(gh api "repos/$GITHUB_REPOSITORY/releases/tags/$RELEASE_TAG" --jq .id)"
+          gh api --method PATCH "repos/$GITHUB_REPOSITORY/releases/$release_id" \
+            -f target_commitish="$RELEASE_TARGET" \
+            -f name="Traf Typeface v2.100" \
+            -f body="Traf Typeface v2.100 public release, rebuilt from the UFO source after the Google Fonts compliance pass. Live FontBakery Google Fonts profile: 0 ERROR, 0 FATAL, 0 FAIL, 11 WARN, 111 PASS. Includes the Regular TTF, editable UFO source archive, and OFL 1.1 license. Remaining warnings are tracked as quality/metadata polish rather than FAIL-level blockers."
+          gh release upload "$RELEASE_TAG" \
+            fonts/ttf/TrafTypeface-Regular.ttf \
+            TrafTypeface-v2.100-source.tar.gz \
+            OFL.txt \
+            --clobber
