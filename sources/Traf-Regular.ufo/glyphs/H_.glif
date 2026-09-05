@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="H" format="2">
+  <advance width="658" />
+  <unicode hex="0048" />
+  <outline>
+    <contour>
+      <point x="138" y="700" type="line" />
+      <point x="152" y="686" type="line" />
+      <point x="152" y="410" type="line" />
+      <point x="160" y="399" type="line" />
+      <point x="432" y="396" type="line" />
+      <point x="499" y="399" type="line" />
+      <point x="510" y="413" type="line" />
+      <point x="513" y="693" type="line" />
+      <point x="524" y="700" type="line" />
+      <point x="597" y="696" type="line" />
+      <point x="600" y="14" type="line" />
+      <point x="594" y="0" type="line" />
+      <point x="524" y="0" type="line" />
+      <point x="510" y="14" type="line" />
+      <point x="510" y="298" type="line" />
+      <point x="492" y="312" type="line" />
+      <point x="163" y="308" type="line" />
+      <point x="152" y="298" type="line" />
+      <point x="152" y="18" type="line" />
+      <point x="135" y="0" type="line" />
+      <point x="76" y="0" type="line" />
+      <point x="62" y="10" type="line" />
+      <point x="58" y="556" type="line" />
+      <point x="62" y="690" type="line" />
+      <point x="68" y="696" type="line" />
+    </contour>
+  </outline>
+  <anchor x="329" y="700" name="top" />
+  <anchor x="329" y="0" name="bottom" />
+</glyph>

@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni0308" format="2">
+  <unicode hex="0308" />
+  <outline>
+    <contour>
+      <point x="-60" y="503" type="line" />
+      <point x="-44" y="495" type="line" />
+      <point x="-30" y="476" type="line" />
+      <point x="-25" y="463" type="line" />
+      <point x="-25" y="451" type="line" />
+      <point x="-39" y="429" type="line" />
+      <point x="-50" y="421" type="line" />
+      <point x="-60" y="417" type="line" />
+      <point x="-79" y="417" type="line" />
+      <point x="-90" y="421" type="line" />
+      <point x="-110" y="440" type="line" />
+      <point x="-114" y="449" type="line" />
+      <point x="-114" y="469" type="line" />
+      <point x="-111" y="478" type="line" />
+      <point x="-96" y="495" type="line" />
+      <point x="-75" y="504" type="line" />
+    </contour>
+    <contour>
+      <point x="80" y="503" type="line" />
+      <point x="96" y="495" type="line" />
+      <point x="110" y="476" type="line" />
+      <point x="115" y="463" type="line" />
+      <point x="115" y="451" type="line" />
+      <point x="101" y="429" type="line" />
+      <point x="90" y="421" type="line" />
+      <point x="80" y="417" type="line" />
+      <point x="61" y="417" type="line" />
+      <point x="50" y="421" type="line" />
+      <point x="30" y="440" type="line" />
+      <point x="26" y="449" type="line" />
+      <point x="26" y="469" type="line" />
+      <point x="29" y="478" type="line" />
+      <point x="44" y="495" type="line" />
+      <point x="65" y="504" type="line" />
+    </contour>
+  </outline>
+  <anchor x="0" y="417" name="_top" />
+  <anchor x="0" y="504" name="top" />
+</glyph>

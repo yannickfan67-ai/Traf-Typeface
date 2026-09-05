@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni017A" format="2">
+  <advance width="454" />
+  <unicode hex="017A" />
+  <outline>
+    <contour>
+      <point x="335" y="483" type="line" />
+      <point x="360" y="476" type="line" />
+      <point x="388" y="452" type="line" />
+      <point x="398" y="427" type="line" />
+      <point x="398" y="388" type="line" />
+      <point x="388" y="360" type="line" />
+      <point x="164" y="112" type="line" />
+      <point x="153" y="91" type="line" />
+      <point x="160" y="84" type="line" />
+      <point x="391" y="80" type="line" />
+      <point x="402" y="66" type="line" />
+      <point x="402" y="18" type="line" />
+      <point x="391" y="0" type="line" />
+      <point x="111" y="0" type="line" />
+      <point x="83" y="10" type="line" />
+      <point x="62" y="32" type="line" />
+      <point x="52" y="52" type="line" />
+      <point x="52" y="98" type="line" />
+      <point x="58" y="119" type="line" />
+      <point x="296" y="385" type="line" />
+      <point x="293" y="399" type="line" />
+      <point x="254" y="402" type="line" />
+      <point x="69" y="402" type="line" />
+      <point x="58" y="413" type="line" />
+      <point x="58" y="472" type="line" />
+      <point x="69" y="483" type="line" />
+    </contour>
+    <contour>
+      <point x="271" y="625" type="line" />
+      <point x="279" y="623" type="line" />
+      <point x="283" y="618" type="line" />
+      <point x="279" y="572" type="line" />
+      <point x="277" y="515" type="line" />
+      <point x="271" y="508" type="line" />
+      <point x="253" y="508" type="line" />
+      <point x="248" y="512" type="line" />
+      <point x="247" y="516" type="line" />
+      <point x="246" y="552" type="line" />
+      <point x="242" y="588" type="line" />
+      <point x="241" y="619" type="line" />
+      <point x="243" y="622" type="line" />
+      <point x="250" y="625" type="line" />
+    </contour>
+  </outline>
+  <anchor x="227" y="494" name="top" />
+  <anchor x="227" y="0" name="bottom" />
+</glyph>

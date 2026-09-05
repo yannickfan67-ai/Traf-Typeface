@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="uni0303" format="2">
+  <unicode hex="0303" />
+  <outline>
+    <contour>
+      <point x="-157" y="308" type="line" />
+      <point x="-143" y="340" type="line" />
+      <point x="-115" y="368" type="line" />
+      <point x="-76" y="382" type="line" />
+      <point x="-28" y="374" type="line" />
+      <point x="56" y="322" type="line" />
+      <point x="78" y="322" type="line" />
+      <point x="92" y="329" type="line" />
+      <point x="123" y="364" type="line" />
+      <point x="144" y="364" type="line" />
+      <point x="158" y="354" type="line" />
+      <point x="158" y="326" type="line" />
+      <point x="140" y="294" type="line" />
+      <point x="120" y="273" type="line" />
+      <point x="95" y="262" type="line" />
+      <point x="64" y="259" type="line" />
+      <point x="32" y="266" type="line" />
+      <point x="-52" y="318" type="line" />
+      <point x="-84" y="315" type="line" />
+      <point x="-115" y="273" type="line" />
+      <point x="-140" y="273" type="line" />
+      <point x="-157" y="287" type="line" />
+    </contour>
+  </outline>
+  <anchor x="0" y="259" name="_top" />
+  <anchor x="0" y="382" name="top" />
+</glyph>
