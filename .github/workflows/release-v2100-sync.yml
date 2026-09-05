@@ -13,7 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       RELEASE_TAG: v2.100
-      RELEASE_TARGET: 37f25d6ae20a2f6225eaee41dae327b7fc12966f
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -31,20 +30,15 @@ jobs:
             sources/Traf-Regular.ufo build.sh Makefile requirements.txt requirements.in \
             tools/fix_ufo.py tools/postprocess_font.py \
             OFL.txt AUTHORS.txt CONTRIBUTORS.txt README.md CHANGELOG.md CONTRIBUTING.md
-      - name: Point v2.100 tag to final QA commit
-        run: |
-          git fetch origin "$RELEASE_TARGET"
-          git tag -f "$RELEASE_TAG" "$RELEASE_TARGET"
-          git push --force origin "refs/tags/$RELEASE_TAG"
       - name: Refresh release metadata and assets
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           release_id="$(gh api "repos/$GITHUB_REPOSITORY/releases/tags/$RELEASE_TAG" --jq .id)"
           gh api --method PATCH "repos/$GITHUB_REPOSITORY/releases/$release_id" \
-            -f target_commitish="$RELEASE_TARGET" \
+            -f target_commitish="$GITHUB_SHA" \
             -f name="Traf Typeface v2.100" \
-            -f body="Traf Typeface v2.100 public release, rebuilt from the UFO source after the Google Fonts compliance pass. Live FontBakery Google Fonts profile: 0 ERROR, 0 FATAL, 0 FAIL. Official project author: Yannick T Harrington-Fan. Includes the Regular TTF, editable UFO source archive, and OFL 1.1 license."
+            -f body="Traf Typeface v2.100 public release, rebuilt from the editable UFO source after the Google Fonts compliance pass. Live FontBakery Google Fonts profile: 0 ERROR, 0 FATAL, 0 FAIL. Official project author: Yannick T Harrington-Fan. OS/2 vendor ID: YTHF. The OFL copyright string matches the family name and points to AUTHORS.txt for the legal copyright holder. Includes the Regular TTF, editable UFO source archive, and OFL 1.1 license."
           gh release upload "$RELEASE_TAG" \
             fonts/ttf/TrafTypeface-Regular.ttf \
             TrafTypeface-v2.100-source.tar.gz \
