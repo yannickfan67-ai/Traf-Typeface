@@ -6,7 +6,7 @@ from fontTools.ttLib import TTFont, newTable
 from fontTools.ttLib.tables.ttProgram import Program
 
 REPO = "https://github.com/yannickfan67-ai/Traf-Typeface"
-COPYRIGHT = f"Copyright 2026 The Traf Project Authors ({REPO})"
+COPYRIGHT = f"Copyright 2026 The Traf Typeface Project Authors ({REPO})"
 LICENSE = (
     "This Font Software is licensed under the SIL Open Font License, Version 1.1. "
     "This license is available with a FAQ at: https://openfontlicense.org"
