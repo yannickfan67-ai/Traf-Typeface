@@ -8,6 +8,7 @@
 - GF Latin Core encoded coverage in the current binary
 - OFL 1.1 license text with final upstream repository URL
 - Copyright/license name records in TTF
+- Official author and contributor contact: Yannick T Harrington-Fan <yannickfan67@gmail.com>
 - Use Typo Metrics enabled; hhea/Typo line gaps set to zero
 - Win metrics matched to the current font bounding box
 - U+25CC DOTTED CIRCLE with top/bottom mark anchors
@@ -20,8 +21,7 @@
 - GitHub Actions workflow for build, `fontbakery check-googlefonts`, and gated GitHub Releases
 - v2.100 compliance source fixes synchronized into the UFO source
 
-## Remaining human/legal blockers
-1. Replace contact placeholders in AUTHORS.txt and CONTRIBUTORS.txt with actual legal credits.
-2. Review generated mark positioning and outline quality visually before filing a Google Fonts onboarding issue.
+## Remaining review item
+- Review generated mark positioning and outline quality visually before filing a Google Fonts onboarding issue.
 
-The source fixes are synchronized. The live Build and QA workflow is the authority for the current FontBakery result; a v2.100 GitHub Release is published only after that workflow has no FAIL results.
+The source fixes are synchronized. The live Build and QA workflow is the authority for the current FontBakery result; v2.100 has reached 0 ERROR, 0 FATAL, and 0 FAIL in the Google Fonts profile.
