@@ -4,6 +4,9 @@ on:
   push:
   pull_request:
 
+permissions:
+  contents: write
+
 jobs:
   build-test:
     runs-on: ubuntu-latest
@@ -25,3 +28,33 @@ jobs:
           path: |
             fonts/ttf/*.ttf
             build/
+      - name: Prepare GitHub Release assets
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          if [[ -e sources/FIX_V2100 ]]; then
+            echo "Source-sync marker still present; release waits for the synced-source commit."
+            exit 0
+          fi
+          tar -czf TrafTypeface-v2.100-source.tar.gz \
+            sources/Traf-Regular.ufo build.sh Makefile requirements.txt requirements.in \
+            OFL.txt AUTHORS.txt CONTRIBUTORS.txt README.md CHANGELOG.md CONTRIBUTING.md
+      - name: Publish GitHub Release v2.100
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [[ -e sources/FIX_V2100 ]]; then
+            echo "Source-sync marker still present; skipping release on this commit."
+            exit 0
+          fi
+          if gh release view v2.100 >/dev/null 2>&1; then
+            echo "Release v2.100 already exists; leaving it unchanged."
+            exit 0
+          fi
+          gh release create v2.100 \
+            fonts/ttf/TrafTypeface-Regular.ttf \
+            TrafTypeface-v2.100-source.tar.gz \
+            OFL.txt \
+            --target "$GITHUB_SHA" \
+            --title "Traf Typeface v2.100" \
+            --notes "First public Traf Typeface release prepared from the UFO source. The release is created only after the Google Fonts FontBakery profile completes with no FAIL results in CI. Includes the Regular TTF, source archive, and OFL license."
