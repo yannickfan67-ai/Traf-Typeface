@@ -81,7 +81,7 @@ def fix_fontinfo():
     info["openTypeNameLicense"] = LICENSE
     info["openTypeNameLicenseURL"] = "https://openfontlicense.org"
     info["openTypeOS2Type"] = []
-    info["openTypeOS2VendorID"] = "TRAF"
+    info["openTypeOS2VendorID"] = "YTHF"
     with path.open("wb") as f:
         plistlib.dump(info, f, sort_keys=False)
 
