@@ -1,3 +1,2 @@
 # Contributors to Traf Typeface.
-# Add individual contributors and engineering credits here before submission if applicable.
-Traf Project Contributors <CONTACT_EMAIL_TODO>
+Yannick T Harrington-Fan <yannickfan67@gmail.com>
