@@ -26,7 +26,7 @@ def main(path: str) -> None:
     font = TTFont(p)
 
     font["OS/2"].fsType = 0
-    font["OS/2"].achVendID = "TRAF"
+    font["OS/2"].achVendID = "YTHF"
     replace_name(font, 0, COPYRIGHT)
     replace_name(font, 13, LICENSE)
     replace_name(font, 14, LICENSE_URL)
