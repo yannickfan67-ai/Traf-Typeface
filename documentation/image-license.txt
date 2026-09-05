@@ -1,0 +1,3 @@
+traf-specimen.svg
+Generated from the Traf Typeface font outlines for project documentation.
+License: CC BY 4.0.

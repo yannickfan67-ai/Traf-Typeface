@@ -1,0 +1,30 @@
+Traf Typeface 2.100 local QA
+
+TTF loads: PASS (477 glyphs, 458 cmap mappings)
+ASCII U+0020–U+007E: 95/95
+Expanded Latin project test: 131/131
+hhea lineGap == 0: PASS
+Typo lineGap == 0: PASS
+hhea == Typo ascender: PASS
+hhea == Typo descender: PASS
+Use Typo Metrics bit set: PASS
+fsType == 0: PASS
+WinAscent == yMax: PASS
+WinDescent == abs(yMin): PASS
+U+25CC dotted circle: PASS
+name ID 0 copyright: PASS
+name ID 13 license: PASS
+name ID 14 license URL: PASS
+GSUB features: tnum
+tnum widths: [620, 620, 620, 620, 620, 620, 620, 620, 620, 620]
+UFO glyph XML parse: 477/477
+UFO Unicode duplicates: 0
+UFO anchors: {"_bottom": 3, "_top": 11, "bottom": 232, "top": 240}
+OFL contamination check: PASS
+Repository URL placeholder: RESOLVED; legal contact placeholders: PRESENT
+fc-scan: PASS Traf Typeface|Regular|137626|/mnt/data/TrafTypeface-GoogleFonts-source-v2.1/fonts/ttf/TrafTypeface-Regular.ttf
+
+Issues / blockers:
+- No local structural issues found. FontBakery still must run in CI.
+- Legal copyright/contact placeholders must be replaced before Google Fonts submission; repository URL is resolved.
+- FontBakery is not installed in this execution environment; GitHub Actions is configured to run the official Google Fonts profile.

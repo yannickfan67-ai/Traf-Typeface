@@ -1,0 +1,38 @@
+name: Bootstrap UFO source
+
+on:
+  push:
+    paths:
+      - "sources/archive.parts/READY"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  expand-source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Reconstruct source archive
+        run: |
+          cat sources/archive.parts/part-* | base64 --decode > /tmp/Traf-Regular.ufo.tar.xz
+          tar -xJf /tmp/Traf-Regular.ufo.tar.xz
+      - name: Install font tools
+        run: pip install -r requirements.txt
+      - name: Build font from expanded UFO
+        run: make build
+      - name: Render README specimen
+        run: python tools/make_specimen.py
+      - name: Commit expanded source and build
+        run: |
+          rm -rf sources/archive.parts
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add sources/Traf-Regular.ufo fonts/ttf/TrafTypeface-Regular.ttf documentation/traf-specimen.svg sources/archive.parts
+          git diff --cached --quiet && exit 0
+          git commit -m "Expand UFO source and build font [skip ci]"
+          git push
