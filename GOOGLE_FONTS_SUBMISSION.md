@@ -13,7 +13,7 @@ Traf Typeface is a geometric Latin typeface with rounded construction, restraine
 By opening this issue, I confirm the project meets the following requirements where checked; items left unchecked are called out transparently for final maintainer/reviewer confirmation during onboarding:
 
 - [x] The entire font project is available in a Github repository (repo) and licensed under the OFL.
-- [ ] I confirm that by 'entire font project', no "plus" or "pro" or other larger version of the project exists as a retail font anywhere — maintainer confirmation pending.
+- [x] I confirm that by 'entire font project', no "plus" or "pro" or other larger version of the project exists as a retail font anywhere.
 - [x] The source files are available in the repo.
 - [x] I am the sole copyright author of the entire project, or all other copyright authors have licensed their work to me under the OFL, and I commit to clearly disclosing if AI tools were used in the creation of this project.
 - [x] There are no "Reserved Font Names" in the OFL license information, or in the project documentation of any known upstream projects.
@@ -21,7 +21,7 @@ By opening this issue, I confirm the project meets the following requirements wh
 - [x] The name of the font family expected to appear on app menus is **Traf Typeface** and is definitive. It does not include the copyright holder's full name or acronym.
 - [x] The font supports at least the Google Fonts 'Latin Core' glyphset.
 - [x] The repo has the Google Fonts preferred upstream repo structure.
-- [ ] I have read, agree with, and comply with, the full Google Fonts contributing requirements — technical requirements are addressed; Google CLA confirmation is still pending.
+- [ ] I have read, agree with, and comply with, the full Google Fonts contributing requirements — technical requirements are addressed; Google CLA has not yet been signed.
 - [x] I will maintain the repository and participate in the onboarding process.
 
 **AI-assisted development disclosure:**
