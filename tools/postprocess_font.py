@@ -12,6 +12,10 @@ LICENSE = (
     "This license is available with a FAQ at: https://openfontlicense.org"
 )
 LICENSE_URL = "https://openfontlicense.org"
+# Keep production builds byte-stable when the editable source is unchanged.
+# 2026-09-05 00:00:00 UTC, the v2.100 release date.
+BUILD_UNIX_EPOCH = 1788566400
+MAC_EPOCH_OFFSET = 2082844800
 
 
 def replace_name(font: TTFont, name_id: int, value: str) -> None:
@@ -41,7 +45,13 @@ def main(path: str) -> None:
     prep.program = program
     font["prep"] = prep
 
-    font.save(p)
+    # fontmake/fontTools otherwise refreshes timestamps during production,
+    # making a clean rebuild differ from the binary committed in fonts/ttf.
+    build_time = BUILD_UNIX_EPOCH + MAC_EPOCH_OFFSET
+    font["head"].created = build_time
+    font["head"].modified = build_time
+
+    font.save(p, reorderTables=True)
     print(f"Post-processed {p}")
 
 
