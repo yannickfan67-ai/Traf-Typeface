@@ -6,12 +6,8 @@
     <contour>
       <point x="124" y="696" type="line" />
       <point x="134" y="686" type="line" />
-      <point x="134" y="72" type="line" />
-      <point x="154" y="58" type="line" />
-      <point x="164" y="40" type="line" />
-      <point x="164" y="20" type="line" />
-      <point x="156" y="8" type="line" />
-      <point x="144" y="0" type="line" />
+      <point x="134" y="14" type="line" />
+      <point x="130" y="7" type="line" />
       <point x="110" y="0" type="line" />
       <point x="60" y="0" type="line" />
       <point x="54" y="7" type="line" />
