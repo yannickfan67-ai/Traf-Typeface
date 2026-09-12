@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Idempotent source fixes for Traf Typeface v2.100 Google Fonts compliance."""
+"""Idempotent source fixes for Traf Typeface Google Fonts production builds."""
 from pathlib import Path
 import plistlib
 import xml.etree.ElementTree as ET
@@ -73,6 +73,13 @@ def fix_dotted_circle(contents):
     tree.write(path, encoding="UTF-8", xml_declaration=True)
 
 
+def register_review_alternates(contents):
+    slashed = GLYPHS / "zero_slashed.glif"
+    if not slashed.exists():
+        raise FileNotFoundError(f"missing alternate source: {slashed}")
+    contents["zero.slashed"] = "zero_slashed.glif"
+
+
 def fix_fontinfo():
     path = UFO / "fontinfo.plist"
     with path.open("rb") as f:
@@ -106,6 +113,7 @@ def main():
         make_phi(contents)
 
     fix_dotted_circle(contents)
+    register_review_alternates(contents)
     save_contents(contents)
     fix_fontinfo()
     print(f"Traf UFO compliance fixes applied; glyphs={len(contents)}")
