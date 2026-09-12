@@ -28,19 +28,19 @@ jobs:
           path: |
             fonts/ttf/*.ttf
             build/
-      - name: Sync generated TTF to main
+      - name: Sync normalized UFO source and generated TTF to main
         id: sync_ttf
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- fonts/ttf/TrafTypeface-Regular.ttf
+          git add -A -- sources/Traf-Regular.ufo fonts/ttf/TrafTypeface-Regular.ttf
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "sha=$GITHUB_SHA" >> "$GITHUB_OUTPUT"
-            echo "Committed TTF already matches the deterministic production build."
+            echo "Committed source and TTF already match the deterministic production build."
           else
-            git commit -m "Sync generated v2.101 TTF [skip ci]"
+            git commit -m "Sync v2.101 source and generated TTF [skip ci]"
             git push
             echo "changed=true" >> "$GITHUB_OUTPUT"
             echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
@@ -71,7 +71,7 @@ jobs:
             gh api --method PATCH "repos/$GITHUB_REPOSITORY/releases/$release_id" \
               -f target_commitish="$RELEASE_TARGET" \
               -f name="Traf Typeface v2.101" \
-              -f body="Traf Typeface v2.101 review-fix release rebuilt from the editable UFO source. The committed TTF and release asset are produced by the same deterministic build, verified with release metadata checks and the Google Fonts FontBakery profile. OS/2 embedding is installable (fsType=0), vendor ID is YTHF, and gasp/prep tables are present. This release also improves I/l differentiation for UI legibility."
+              -f body="Traf Typeface v2.101 review-fix release rebuilt from the editable UFO source. The committed TTF and release asset are produced by the same deterministic build, verified with release metadata checks and the Google Fonts FontBakery profile. OS/2 embedding is installable (fsType=0), vendor ID is YTHF, and gasp/prep tables are present. This release also improves I/l differentiation for UI legibility and adds an OpenType slashed-zero alternate."
             gh release upload v2.101 \
               fonts/ttf/TrafTypeface-Regular.ttf \
               TrafTypeface-v2.101-source.tar.gz \
@@ -84,5 +84,5 @@ jobs:
               OFL.txt \
               --target "$RELEASE_TARGET" \
               --title "Traf Typeface v2.101" \
-              --notes "Traf Typeface v2.101 review-fix release rebuilt from the editable UFO source. The committed TTF and release asset are produced by the same deterministic build, verified with release metadata checks and the Google Fonts FontBakery profile. This release also improves I/l differentiation for UI legibility."
+              --notes "Traf Typeface v2.101 review-fix release rebuilt from the editable UFO source. The committed TTF and release asset are produced by the same deterministic build, verified with release metadata checks and the Google Fonts FontBakery profile. This release improves I/l differentiation for UI legibility and adds an OpenType slashed-zero alternate."
           fi
