@@ -1,7 +1,7 @@
 # Changelog
 
 ## 2.101 — 2026-09-12
-- Reworked capital `I` and lowercase `l` so the two forms remain distinguishable in compact desktop UI text.
+- Preserved the original default letterform style; capital `I` and lowercase `l` retain their established Traf shapes.
 - Added a slashed-zero alternate exposed through the OpenType `zero` feature without changing the default `0` form.
 - Made production TTF timestamps deterministic so clean rebuilds do not drift from the committed binary.
 - Added an explicit binary verification step for `fsType=0`, vendor ID `YTHF`, `gasp`, `prep`, copyright/version metadata, and the `zero` feature.
