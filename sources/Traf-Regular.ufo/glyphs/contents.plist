@@ -946,5 +946,7 @@
 	<string>uni03C9.glif</string>
 	<key>uni03C6</key>
 	<string>uni03C6.glif</string>
+	<key>zero.slashed</key>
+	<string>zero_slashed.glif</string>
 </dict>
 </plist>
