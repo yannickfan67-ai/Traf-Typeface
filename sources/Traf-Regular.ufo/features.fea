@@ -13,3 +13,7 @@ feature tnum {
   sub eight by eight.tnum;
   sub nine by nine.tnum;
 } tnum;
+
+feature zero {
+  sub zero by zero.slashed;
+} zero;
