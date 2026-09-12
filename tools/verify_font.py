@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fail CI if the committed/produced TTF misses release-critical metadata."""
+"""Fail CI if the produced TTF misses release-critical metadata/features."""
 from pathlib import Path
 import sys
 from fontTools.ttLib import TTFont
@@ -18,6 +18,15 @@ def name_values(font: TTFont, name_id: int) -> set[str]:
             except UnicodeDecodeError:
                 pass
     return values
+
+
+def gsub_feature_tags(font: TTFont) -> set[str]:
+    if "GSUB" not in font or font["GSUB"].table.FeatureList is None:
+        return set()
+    return {
+        record.FeatureTag
+        for record in font["GSUB"].table.FeatureList.FeatureRecord
+    }
 
 
 def main(path: str) -> None:
@@ -48,6 +57,13 @@ def main(path: str) -> None:
     if not any("Traf Typeface Project Authors" in value for value in copyrights):
         errors.append("nameID 0 is missing the project copyright string")
 
+    glyphs = set(font.getGlyphOrder())
+    if "zero.slashed" not in glyphs:
+        errors.append("missing zero.slashed glyph")
+    features = gsub_feature_tags(font)
+    if "zero" not in features:
+        errors.append(f"missing OpenType zero feature; GSUB features={sorted(features)!r}")
+
     if errors:
         for error in errors:
             print(f"ERROR: {error}", file=sys.stderr)
@@ -55,7 +71,7 @@ def main(path: str) -> None:
 
     print(
         f"Verified {p}: fsType=0 vendor={EXPECTED_VENDOR} "
-        "gasp=present prep=present version=2.101"
+        "gasp=present prep=present version=2.101 zero=present"
     )
 
 
