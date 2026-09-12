@@ -71,7 +71,7 @@ jobs:
             gh api --method PATCH "repos/$GITHUB_REPOSITORY/releases/$release_id" \
               -f target_commitish="$RELEASE_TARGET" \
               -f name="Traf Typeface v2.101" \
-              -f body="Traf Typeface v2.101 review-fix release rebuilt from the editable UFO source. The committed TTF and release asset are produced by the same deterministic build, verified with release metadata checks and the Google Fonts FontBakery profile. OS/2 embedding is installable (fsType=0), vendor ID is YTHF, and gasp/prep tables are present. This release also improves I/l differentiation for UI legibility and adds an OpenType slashed-zero alternate."
+              -f body="Traf Typeface v2.101 review-fix release rebuilt from the editable UFO source. The committed TTF and release asset are produced by the same deterministic build, verified with release metadata checks and the Google Fonts FontBakery profile. OS/2 embedding is installable (fsType=0), vendor ID is YTHF, and gasp/prep tables are present. The established Traf default letterform style is preserved; this release adds an optional OpenType slashed-zero alternate without changing the default zero."
             gh release upload v2.101 \
               fonts/ttf/TrafTypeface-Regular.ttf \
               TrafTypeface-v2.101-source.tar.gz \
@@ -84,5 +84,5 @@ jobs:
               OFL.txt \
               --target "$RELEASE_TARGET" \
               --title "Traf Typeface v2.101" \
-              --notes "Traf Typeface v2.101 review-fix release rebuilt from the editable UFO source. The committed TTF and release asset are produced by the same deterministic build, verified with release metadata checks and the Google Fonts FontBakery profile. This release improves I/l differentiation for UI legibility and adds an OpenType slashed-zero alternate."
+              --notes "Traf Typeface v2.101 review-fix release rebuilt from the editable UFO source. The committed TTF and release asset are produced by the same deterministic build, verified with release metadata checks and the Google Fonts FontBakery profile. The established Traf default letterform style is preserved; this release adds an optional OpenType slashed-zero alternate without changing the default zero."
           fi
