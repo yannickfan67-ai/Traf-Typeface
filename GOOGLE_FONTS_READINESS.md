@@ -21,14 +21,14 @@
 - Deterministic production timestamps so clean builds remain byte-stable when source is unchanged
 - Binary verification in CI for release-critical OS/2/name/table/OpenType-feature metadata
 - Automatic synchronization of normalized UFO source and the built TTF in `fonts/ttf/` with the same production build used for release assets
-- Capital `I` / lowercase `l` legibility pass for compact UI text
+- Original Traf default letterform style preserved; review engineering changes do not redesign core glyphs
 - README specimen generated from the built font
 - GitHub Actions workflow for build, verification, `fontbakery check-googlefonts`, and gated GitHub Releases
 
 ## Remaining review items
-- Do a dedicated optical spacing/kerning pass using representative strings such as `HOHO`, `NONO`, `AVATAR`, `WATER`, `minimum`, `runner`, and `Traf Typeface`.
-- Audit mark weight/scale consistency across acute, caron, dieresis, double acute, `Ł`, and `Đ`.
-- Consider a broader high-legibility `I/l/1` alternate set only if reviewers want more than the improved default `I/l` distinction.
+- Do a dedicated optical spacing/kerning pass using representative strings such as `HOHO`, `NONO`, `AVATAR`, `WATER`, `minimum`, `runner`, and `Traf Typeface` without changing the established letterform style.
+- Audit mark weight/scale consistency across acute, caron, dieresis, double acute, `Ł`, and `Đ` while preserving the existing design language.
+- If reviewers request extra UI differentiation, prefer optional stylistic alternates for `I/l/1` rather than changing the default Traf forms.
 - Perform Windows/browser rasterization checks at 14–16 px and review punctuation/currency/math symbol weight visually.
 
 The live Build and QA workflow is the authority for the current FontBakery result. v2.101 is the review-fix release line prepared for the next Google Fonts reviewer pass.
