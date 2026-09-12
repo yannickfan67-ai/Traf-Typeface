@@ -6,7 +6,7 @@ from fontTools.ttLib import TTFont
 
 EXPECTED_PREP = bytes.fromhex("B801FF85B0048D")
 EXPECTED_VENDOR = "YTHF"
-EXPECTED_VERSION = "Version 2.100"
+EXPECTED_VERSION = "Version 2.101"
 
 
 def name_values(font: TTFont, name_id: int) -> set[str]:
@@ -55,7 +55,7 @@ def main(path: str) -> None:
 
     print(
         f"Verified {p}: fsType=0 vendor={EXPECTED_VENDOR} "
-        "gasp=present prep=present version=2.100"
+        "gasp=present prep=present version=2.101"
     )
 
 
