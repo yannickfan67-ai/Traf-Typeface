@@ -30,11 +30,13 @@ AI tools, including OpenAI ChatGPT and image-generation tools, were used during 
 
 **QA / production notes:**
 
-- Current release: v2.100
+- Current release: v2.101
 - Editable source: `sources/Traf-Regular.ufo`
 - One-step `fontmake` build via the repository scripts
-- Current Google Fonts FontBakery profile in CI: **0 ERROR, 0 FATAL, 0 FAIL**; remaining findings are WARN-level review items
-- OS/2 vendor ID is `YTHF`; Microsoft vendor registration is being pursued and currently causes a WARN-only unknown-vendor finding
+- CI verifies final `fsType=0`, vendor ID `YTHF`, `gasp`/`prep`, copyright/version metadata, and the OpenType `zero` feature before FontBakery
+- The committed TTF is synchronized from the same deterministic production build used for the release asset
+- Google Fonts FontBakery profile is enforced in CI; remaining findings are tracked as review-level WARN items rather than silently accepted
+- v2.101 improves capital `I` / lowercase `l` differentiation for compact UI text and adds an optional slashed zero without changing the default `0`
 - Copyright author/maintainer: Yannick T Harrington-Fan <yannickfan67@gmail.com>
 
 **Image:**

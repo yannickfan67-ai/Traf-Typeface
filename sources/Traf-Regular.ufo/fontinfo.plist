@@ -35,11 +35,11 @@
 	<key>versionMajor</key>
 	<integer>2</integer>
 	<key>versionMinor</key>
-	<integer>100</integer>
+	<integer>101</integer>
 	<key>xHeight</key>
 	<integer>494</integer>
 	<key>openTypeNameVersion</key>
-	<string>Version 2.100</string>
+	<string>Version 2.101</string>
 	<key>openTypeOS2TypoAscender</key>
 	<integer>960</integer>
 	<key>openTypeOS2TypoDescender</key>

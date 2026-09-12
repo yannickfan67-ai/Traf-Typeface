@@ -11,6 +11,7 @@ Traf Typeface is a geometric Latin typeface developed from the `Traf` lettering 
 - GF Latin Core encoded character coverage
 - Extended Latin, punctuation, fractions, math, arrows, and currency symbols
 - Proportional default figures plus `tnum` tabular alternates
+- Optional slashed zero via the OpenType `zero` feature
 - SIL Open Font License 1.1
 
 ## Building
@@ -22,7 +23,7 @@ pip install -r requirements.txt
 make build
 ```
 
-The output is copied to `fonts/ttf/`.
+The output is copied to `fonts/ttf/`. The production post-process step fixes the release-critical OS/2/name metadata, adds `gasp`/`prep`, and normalizes timestamps so an unchanged source rebuild stays deterministic.
 
 ## QA
 
@@ -30,7 +31,9 @@ The output is copied to `fonts/ttf/`.
 make test
 ```
 
-The GitHub Actions workflow builds the font from the editable UFO source and runs the Google Fonts FontBakery profile on pushes and pull requests. The current v2.100 production build has 0 ERROR, 0 FATAL, and 0 FAIL in that profile; remaining findings are WARN-level review items.
+The GitHub Actions workflow builds the font from the editable UFO source, verifies the final binary metadata/features, and runs the Google Fonts FontBakery profile on pushes and pull requests. On `main`, CI also synchronizes normalized UFO source plus the deterministic generated TTF back into the repository and publishes the matching release asset so the checked-in binary cannot silently lag behind the source/build pipeline.
+
+The v2.101 review pass separates capital `I` and lowercase `l` more clearly for compact desktop UI use while keeping the original minimalist default style, and adds a slashed-zero alternate without changing the default zero.
 
 ## Google Fonts status
 

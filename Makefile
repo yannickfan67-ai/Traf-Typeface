@@ -3,7 +3,10 @@ PYTHON ?= python3
 build:
 	./build.sh
 
-test:
+verify:
+	$(PYTHON) tools/verify_font.py fonts/ttf/TrafTypeface-Regular.ttf
+
+test: verify
 	fontbakery check-googlefonts --full-lists --succinct fonts/ttf/*.ttf
 
 proof:
